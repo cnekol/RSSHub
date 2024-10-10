@@ -3,6 +3,10 @@ import ofetch from '@/utils/ofetch';
 import { parseDate } from '@/utils/parse-date';
 import { load } from 'cheerio';
 
+export function removeDuplicateByKey(items, key: string) {
+    return [...new Map(items.map((x) => [x[key], x])).values()];
+}
+
 export function fetchArticle(item) {
     return cache.tryGet(item.link, async () => {
         const data = await ofetch(item.link);
@@ -12,16 +16,18 @@ export function fetchArticle(item) {
         }
         const rawLdjson = JSON.parse($('#link-ld-json').text());
         let ldjson;
-        if (Array.isArray(rawLdjson)) {
-            // Regular
-            ldjson = rawLdjson[0];
+        if (rawLdjson['@type'] === 'NewsArticle' || (Array.isArray(rawLdjson) && rawLdjson.some((e) => e['@type'] === 'NewsArticle'))) {
+            // Regular(Articles, Videos)
+            ldjson = Array.isArray(rawLdjson) ? rawLdjson.find((e) => e['@type'] === 'NewsArticle') : rawLdjson;
 
             $('div.Enhancement').remove();
+            const section = $("meta[property='article:section']").attr('content');
             return {
+                title: ldjson.headline,
                 pubDate: parseDate(ldjson.datePublished),
                 updated: parseDate(ldjson.dateModified),
-                description: $('div.RichTextStoryBody').html(),
-                category: [`section:${$("meta[property='article:section']").attr('content')}`, ...ldjson.keywords],
+                description: $('div.RichTextStoryBody').html() || $(':is(.VideoLead, .VideoPage-pageSubHeading)').html(),
+                category: [...(section ? [section] : []), ...(ldjson.keywords ?? [])],
                 guid: $("meta[name='brightspot.contentId']").attr('content'),
                 author: ldjson.author,
                 ...item,
