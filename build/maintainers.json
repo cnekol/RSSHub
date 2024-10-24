@@ -78,6 +78,9 @@
   "/0x80/blog": [
     "xnum"
   ],
+  "/10jqka/realtimenews/:tag?": [
+    "nczitzk"
+  ],
   "/141jav/:type/:keyword{.*}?": [
     "cgkings",
     "nczitzk"
@@ -376,6 +379,9 @@
   "/ajmide/:id": [
     "Fatpandac"
   ],
+  "/alicesoft/information/:category?/:game?": [
+    "keocheung"
+  ],
   "/alipan/files/:share_id/:parent_file_id?": [
     "DIYgod"
   ],
@@ -589,37 +595,37 @@
   "/bandcamp/weekly": [
     "nczitzk"
   ],
-  "/bangumi/moe/*": [],
-  "/bangumi/online": [
+  "/bangumi.moe/*": [
+    "nczitzk"
+  ],
+  "/bangumi.online/": [
     "devinmugen"
   ],
-  "/bangumi/tv/calendar/today": [
+  "/bangumi.tv/calendar/today": [
     "magic-akari"
   ],
-  "/bangumi/tv/topic/:id": [
+  "/bangumi.tv/topic/:id": [
     "ylc395"
   ],
-  "/bangumi/tv/group/:id": [
+  "/bangumi.tv/group/:id": [
     "SettingDust"
   ],
-  "/bangumi/:type/followrank": [
+  "/bangumi.tv/:type/followrank": [
     "honue",
     "zhoukuncheng",
     "NekoAria"
   ],
-  "/bangumi/tv/person/:id": [
+  "/bangumi.tv/person/:id": [
     "ylc395"
   ],
-  "/bangumi/tv/subject/:id/:type?/:showOriginalName?": [
+  "/bangumi.tv/subject/:id/:type?/:showOriginalName?": [
     "JimenezLi"
   ],
-  "/bangumi/tv/user/blog/:id": [
+  "/bangumi.tv/user/blog/:id": [
     "nczitzk"
   ],
-  "/bangumi/tv/user/collections/:id/:subjectType/:type": [
-    "youyou-sudo"
-  ],
-  "/bangumi/tv/user/wish/:id": [
+  "/bangumi.tv/user/collections/:id/:subjectType/:type": [
+    "youyou-sudo",
     "honue"
   ],
   "/baozimh/comic/:name": [
@@ -947,7 +953,7 @@
   "/bsky/keyword/:keyword": [
     "untitaker"
   ],
-  "/bsky/profile/:handle": [
+  "/bsky/profile/:handle/:routeParams?": [
     "TonyRL"
   ],
   "/bt0/mv/:number/:domain?": [
@@ -1880,7 +1886,8 @@
   ],
   "/douban/topic/:id/:sort?": [
     "LogicJake",
-    "pseudoyu"
+    "pseudoyu",
+    "haowenwu"
   ],
   "/douban/movie/ustop": [
     "DIYgod"
@@ -1889,7 +1896,9 @@
     "numm233",
     "nczitzk"
   ],
-  "/douban/people/:userid/status/:routeParams?": [],
+  "/douban/people/:userid/status/:routeParams?": [
+    "alfredcai"
+  ],
   "/douban/people/:userid/wish/:routeParams?": [
     "exherb"
   ],
@@ -1944,6 +1953,9 @@
   "/dut/:0?": [],
   "/dx2025/:type?/:category?": [
     "nczitzk"
+  ],
+  "/dxy/bbs/board/:boardId": [
+    "TonyRL"
   ],
   "/dxy/bbs/special/:specialId": [
     "TonyRL"
@@ -4204,8 +4216,9 @@
   "/misskey/notes/featured/:site": [
     "Misaka13514"
   ],
-  "/misskey/users/notes/:username": [
-    "siygle"
+  "/misskey/users/notes/:username/:routeParams?": [
+    "siygle",
+    "SnowAgar25"
   ],
   "/misskon/posts/:routeParams?": [
     "Urabartin"
@@ -5422,7 +5435,8 @@
     "nczitzk"
   ],
   "/rss3/:account/:network?/:tag?": [
-    "DIYgod"
+    "DIYgod",
+    "pseudoyu"
   ],
   "/rsshub/routes/:lang?": [
     "DIYgod"
@@ -5812,7 +5826,9 @@
   "/sis001/author/:id?": [
     "keocheung"
   ],
-  "/sis001/forum/:id?": [],
+  "/sis001/forum/:id?": [
+    "TonyRL"
+  ],
   "/sjtu/gs/:type/:num?": [
     "dzx-dzx"
   ],
@@ -5917,6 +5933,9 @@
   ],
   "/sony/downloads/:productType/:productId": [
     "EthanWng97"
+  ],
+  "/sorrycc/": [
+    "KarasuShin"
   ],
   "/soundofhope/:channel/:id": [
     "Fatpandac"
@@ -6147,6 +6166,9 @@
   ],
   "/swpu/scs/:code": [
     "CYTMWIA"
+  ],
+  "/sycl/:feed?": [
+    "mocusez"
   ],
   "/syosetu/chapter/:id": [
     "huangliangshusheng"
@@ -7581,6 +7603,9 @@
     "yikZero"
   ],
   "/zjut/jwc/:type": [
+    "zhullyb"
+  ],
+  "/zjut/www/:type": [
     "zhullyb"
   ],
   "/zjuvag/blog": [

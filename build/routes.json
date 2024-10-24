@@ -773,6 +773,100 @@
     "url": "0x80.pl",
     "description": ""
   },
+  "10jqka": {
+    "routes": {
+      "/realtimenews/:tag?": {
+        "path": "/realtimenews/:tag?",
+        "name": "7×24小时要闻直播",
+        "url": "news.10jqka.com.cn",
+        "maintainers": [
+          "nczitzk"
+        ],
+        "example": "/10jqka/realtimenews",
+        "parameters": {
+          "tag": "标签，默认为全部"
+        },
+        "description": ":::tip\n  若订阅 [7×24小时要闻直播](https://news.10jqka.com.cn/realtimenews.html) 的 `公告` 标签。将 `公告` 作为标签参数填入，此时路由为 [`/10jqka/realtimenews/公告`](https://rsshub.app/10jqka/realtimenews/公告)。\n  \n  若订阅 [7×24小时要闻直播](https://news.10jqka.com.cn/realtimenews.html) 的 `公告` 和 `A股` 标签。将 `公告,A股` 作为标签参数填入，此时路由为 [`/10jqka/realtimenews/公告,A股`](https://rsshub.app/10jqka/realtimenews/公告,A股)。\n  :::\n\n  | 全部 | 重要 | A股 | 港股 | 美股 | 机会 | 异动 | 公告 |\n  | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |\n    ",
+        "categories": [
+          "finance"
+        ],
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportRadar": true,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "title": "全部",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/全部"
+          },
+          {
+            "title": "重要",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/重要"
+          },
+          {
+            "title": "A股",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/A股"
+          },
+          {
+            "title": "港股",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/港股"
+          },
+          {
+            "title": "美股",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/美股"
+          },
+          {
+            "title": "机会",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/机会"
+          },
+          {
+            "title": "异动",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/异动"
+          },
+          {
+            "title": "公告",
+            "source": [
+              "news.10jqka.com.cn/realtimenews.html"
+            ],
+            "target": "/realtimenews/公告"
+          }
+        ],
+        "location": "realtimenews.ts"
+      }
+    },
+    "name": "同花顺财经",
+    "url": "10jqka.com.cn",
+    "categories": [
+      "finance"
+    ],
+    "description": ""
+  },
   "141jav": {
     "routes": {
       "/:type/:keyword{.*}?": {
@@ -2111,7 +2205,7 @@
       "/article/:id": {
         "path": "/article/:id",
         "name": "章节",
-        "url": "www.69shuba.pro",
+        "url": "www.69shuba.cx",
         "maintainers": [
           "eternasuno"
         ],
@@ -2133,7 +2227,7 @@
         "radar": [
           {
             "source": [
-              "www.69shuba.pro/book/:id.htm"
+              "www.69shuba.cx/book/:id.htm"
             ],
             "target": "/article/:id"
           }
@@ -2142,7 +2236,7 @@
       }
     },
     "name": "69书吧",
-    "url": "69shuba.pro"
+    "url": "69shuba.cx"
   },
   "6park": {
     "routes": {
@@ -5164,6 +5258,47 @@
     "name": "阿基米德 FM",
     "url": "m.ajmide.com"
   },
+  "alicesoft": {
+    "routes": {
+      "/information/:category?/:game?": {
+        "url": "www.alicesoft.com/information",
+        "path": "/information/:category?/:game?",
+        "categories": [
+          "game"
+        ],
+        "example": "/alicesoft/information/game/cat377",
+        "parameters": {
+          "category": "Category in the URL, which can be accessed under カテゴリ一覧 on the website.",
+          "game": "Game-specific subcategory in the URL, which can be accessed under カテゴリ一覧 on the website. In this case, the category value should be `game`."
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.alicesoft.com/information",
+              "www.alicesoft.com/information/:category",
+              "www.alicesoft.com/information/:category/:game"
+            ],
+            "target": "/information/:category/:game"
+          }
+        ],
+        "name": "ニュース",
+        "maintainers": [
+          "keocheung"
+        ],
+        "location": "infomation.ts"
+      }
+    },
+    "name": "ALICESOFT",
+    "url": "www.alicesoft.com"
+  },
   "alipan": {
     "routes": {
       "/files/:share_id/:parent_file_id?": {
@@ -6003,8 +6138,7 @@
           "/nav/:nav{.*}?"
         ],
         "categories": [
-          "traditional-media",
-          "popular"
+          "traditional-media"
         ],
         "example": "/apnews/topics/apf-topnews",
         "view": 0,
@@ -6044,8 +6178,7 @@
           "/nav/:nav{.*}?"
         ],
         "categories": [
-          "traditional-media",
-          "popular"
+          "traditional-media"
         ],
         "example": "/apnews/topics/apf-topnews",
         "view": 0,
@@ -7354,29 +7487,40 @@
     "name": "Bandcamp",
     "url": "bandcamp.com"
   },
-  "bangumi": {
+  "bangumi.moe": {
     "routes": {
-      "/moe/*": {
-        "path": "/moe/*",
+      "/*": {
+        "path": "/*",
+        "categories": [
+          "anime"
+        ],
         "radar": [
           {
             "source": [
               "bangumi.moe/"
-            ],
-            "target": "/moe"
+            ]
           }
         ],
-        "name": "Unknown",
-        "maintainers": [],
+        "name": "Latest",
+        "example": "/bangumi.moe",
+        "maintainers": [
+          "nczitzk"
+        ],
         "url": "bangumi.moe/",
-        "location": "moe/index.ts"
-      },
-      "/online": {
-        "path": "/online",
+        "location": "index.ts"
+      }
+    },
+    "name": "萌番组",
+    "url": "bangumi.online"
+  },
+  "bangumi.online": {
+    "routes": {
+      "/": {
+        "path": "/",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/online",
+        "example": "/bangumi.online",
         "parameters": {},
         "features": {
           "requireConfig": false,
@@ -7398,14 +7542,20 @@
           "devinmugen"
         ],
         "url": "bangumi.online/",
-        "location": "online/online.ts"
-      },
-      "/tv/calendar/today": {
-        "path": "/tv/calendar/today",
+        "location": "online.ts"
+      }
+    },
+    "name": "アニメ新番組",
+    "url": "bangumi.online"
+  },
+  "bangumi.tv": {
+    "routes": {
+      "/calendar/today": {
+        "path": "/calendar/today",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/calendar/today",
+        "example": "/bangumi.tv/calendar/today",
         "parameters": {},
         "features": {
           "requireConfig": false,
@@ -7427,14 +7577,14 @@
           "magic-akari"
         ],
         "url": "bgm.tv/calendar",
-        "location": "tv/calendar/today.ts"
+        "location": "calendar/today.ts"
       },
-      "/tv/topic/:id": {
-        "path": "/tv/topic/:id",
+      "/topic/:id": {
+        "path": "/topic/:id",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/topic/367032",
+        "example": "/bangumi.tv/topic/367032",
         "parameters": {
           "id": "话题 id, 在话题页面地址栏查看"
         },
@@ -7457,14 +7607,14 @@
         "maintainers": [
           "ylc395"
         ],
-        "location": "tv/group/reply.ts"
+        "location": "group/reply.ts"
       },
-      "/tv/group/:id": {
-        "path": "/tv/group/:id",
+      "/group/:id": {
+        "path": "/group/:id",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/group/boring",
+        "example": "/bangumi.tv/group/boring",
         "parameters": {
           "id": "小组 id, 在小组页面地址栏查看"
         },
@@ -7487,14 +7637,14 @@
         "maintainers": [
           "SettingDust"
         ],
-        "location": "tv/group/topic.ts"
+        "location": "group/topic.ts"
       },
       "/:type/followrank": {
         "path": "/:type/followrank",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/anime/followrank",
+        "example": "/bangumi.tv/anime/followrank",
         "parameters": {
           "type": "类型：anime - 动画，book - 图书，music - 音乐，game - 游戏，real - 三次元"
         },
@@ -7520,14 +7670,14 @@
           "zhoukuncheng",
           "NekoAria"
         ],
-        "location": "tv/other/followrank.ts"
+        "location": "other/followrank.ts"
       },
-      "/tv/person/:id": {
-        "path": "/tv/person/:id",
+      "/person/:id": {
+        "path": "/person/:id",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/person/32943",
+        "example": "/bangumi.tv/person/32943",
         "parameters": {
           "id": "人物 id, 在人物页面的地址栏查看"
         },
@@ -7550,14 +7700,14 @@
         "maintainers": [
           "ylc395"
         ],
-        "location": "tv/person/index.ts"
+        "location": "person/index.ts"
       },
-      "/tv/subject/:id/:type?/:showOriginalName?": {
-        "path": "/tv/subject/:id/:type?/:showOriginalName?",
+      "/subject/:id/:type?/:showOriginalName?": {
+        "path": "/subject/:id/:type?/:showOriginalName?",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/subject/328609/ep/true",
+        "example": "/bangumi.tv/subject/328609/ep/true",
         "parameters": {
           "id": "条目 id, 在条目页面的地址栏查看",
           "type": "条目类型，可选值为 `ep`, `comments`, `blogs`, `topics`，默认为 `ep`",
@@ -7584,14 +7734,14 @@
           "JimenezLi"
         ],
         "description": ":::warning\n  此通用路由仅用于对路由参数的描述，具体信息请查看下方与条目相关的路由\n  :::",
-        "location": "tv/subject/index.ts"
+        "location": "subject/index.ts"
       },
-      "/tv/user/blog/:id": {
-        "path": "/tv/user/blog/:id",
+      "/user/blog/:id": {
+        "path": "/user/blog/:id",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/user/blog/sai",
+        "example": "/bangumi.tv/user/blog/sai",
         "parameters": {
           "id": "用户 id, 在用户页面地址栏查看"
         },
@@ -7608,20 +7758,25 @@
             "source": [
               "bgm.tv/user/:id"
             ]
+          },
+          {
+            "source": [
+              "bangumi.tv/user/:id"
+            ]
           }
         ],
         "name": "用户日志",
         "maintainers": [
           "nczitzk"
         ],
-        "location": "tv/user/blog.ts"
+        "location": "user/blog.ts"
       },
-      "/tv/user/collections/:id/:subjectType/:type": {
-        "path": "/tv/user/collections/:id/:subjectType/:type",
+      "/user/collections/:id/:subjectType/:type": {
+        "path": "/user/collections/:id/:subjectType/:type",
         "categories": [
           "anime"
         ],
-        "example": "/bangumi/tv/user/collections/sai/1/1",
+        "example": "/bangumi.tv/user/collections/sai/1/1",
         "parameters": {
           "id": "用户 id, 在用户页面地址栏查看",
           "subjectType": {
@@ -7691,46 +7846,42 @@
           "supportPodcast": false,
           "supportScihub": false
         },
-        "radar": [],
-        "name": "Bangumi 用户收藏列表",
-        "maintainers": [
-          "youyou-sudo"
-        ],
-        "location": "tv/user/collections.ts"
-      },
-      "/tv/user/wish/:id": {
-        "path": "/tv/user/wish/:id",
-        "categories": [
-          "anime"
-        ],
-        "example": "/bangumi/tv/user/wish/sai",
-        "parameters": {
-          "id": "用户 id, 在用户页面地址栏查看"
-        },
-        "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
         "radar": [
           {
             "source": [
+              "bgm.tv/anime/list/:id"
+            ],
+            "target": "/bangumi.tv/user/collections/:id/all/all"
+          },
+          {
+            "source": [
+              "bangumi.tv/anime/list/:id"
+            ],
+            "target": "/bangumi.tv/user/collections/:id/all/all"
+          },
+          {
+            "source": [
               "bgm.tv/anime/list/:id/wish"
-            ]
+            ],
+            "target": "/bangumi.tv/user/collections/:id/2/1"
+          },
+          {
+            "source": [
+              "bangumi.tv/anime/list/:id/wish"
+            ],
+            "target": "/bangumi.tv/user/collections/:id/2/1"
           }
         ],
-        "name": "用户想看",
+        "name": "Bangumi 用户收藏列表",
         "maintainers": [
+          "youyou-sudo",
           "honue"
         ],
-        "location": "tv/user/wish.ts"
+        "location": "user/collections.ts"
       }
     },
-    "name": "アニメ新番組",
-    "url": "bangumi.moe"
+    "name": "Bangumi 番组计划",
+    "url": "bangumi.tv"
   },
   "baozimh": {
     "routes": {
@@ -11250,15 +11401,17 @@
         ],
         "location": "keyword.ts"
       },
-      "/profile/:handle": {
-        "path": "/profile/:handle",
+      "/profile/:handle/:routeParams?": {
+        "path": "/profile/:handle/:routeParams?",
         "categories": [
           "social-media",
           "popular"
         ],
+        "view": 1,
         "example": "/bsky/profile/bsky.app",
         "parameters": {
-          "handle": "User handle, can be found in URL"
+          "handle": "User handle, can be found in URL",
+          "routeParams": "Filter parameter, Use filter to customize content types"
         },
         "features": {
           "requireConfig": false,
@@ -11279,6 +11432,7 @@
         "maintainers": [
           "TonyRL"
         ],
+        "description": "\n| Filter Value | Description |\n|--------------|-------------|\n| posts_with_replies | Includes Posts, Replies, and Reposts |\n| posts_no_replies | Includes Posts and Reposts, without Replies |\n| posts_with_media | Shows only Posts containing media |\n| posts_and_author_threads | Shows Posts and Threads, without Replies and Reposts |\n\nDefault value for filter is `posts_and_author_threads` if not specified.\n\nExample:\n- `/bsky/profile/bsky.app/filter=posts_with_replies`",
         "location": "posts.ts"
       }
     },
@@ -21464,7 +21618,8 @@
         "name": "话题",
         "maintainers": [
           "LogicJake",
-          "pseudoyu"
+          "pseudoyu",
+          "haowenwu"
         ],
         "location": "other/topic.ts"
       },
@@ -21516,8 +21671,21 @@
       },
       "/people/:userid/status/:routeParams?": {
         "path": "/people/:userid/status/:routeParams?",
-        "name": "Unknown",
-        "maintainers": [],
+        "categories": [
+          "social-media",
+          "popular"
+        ],
+        "view": 1,
+        "example": "/douban/people/75118396/status",
+        "parameters": {
+          "userid": "整数型用户 id",
+          "routeParams": "额外参数；见下"
+        },
+        "name": "用户广播",
+        "maintainers": [
+          "alfredcai"
+        ],
+        "description": "\n::: tip\n-   **目前只支持整数型 id**\n-   字母型的 id，可以通过头像图片链接来找到其整数型 id，图片命名规则`ul[userid]-*.jpg`或`u[userid]-*.jpg`，即取文件名中间的数字\n-   例如：用户 id: `MovieL`他的头像图片链接：`https://img1.doubanio.com/icon/ul1128221-98.jpg`他的整数型 id: `1128221`\n:::\n\n对于豆瓣用户广播内容，在 `routeParams` 参数中以 query string 格式设置如下选项可以控制输出的样式\n\n  | 键                         | 含义                                                           | 接受的值       | 默认值 |\n  | -------------------------- | -------------------------------------------------------------- | -------------- | ------ |\n  | readable                   | 是否开启细节排版可读性优化                                     | 0/1/true/false | false  |\n  | authorNameBold             | 是否加粗作者名字                                               | 0/1/true/false | false  |\n  | showAuthorInTitle          | 是否在标题处显示作者                                           | 0/1/true/false | true   |\n  | showAuthorInDesc           | 是否在正文处显示作者                                           | 0/1/true/false | false  |\n  | showAuthorAvatarInDesc     | 是否在正文处显示作者头像（若阅读器会提取正文图片，不建议开启） | 0/1/true/false | false  |\n  | showEmojiForRetweet        | 显示 “🔁” 取代 “Fw”（转发）                                    | 0/1/true/false | false  |\n  | showRetweetTextInTitle     | 在标题出显示转发评论（置为 false 则在标题只显示被转发的广播）  | 0/1/true/false | false  |\n  | addLinkForPics             | 为图片添加可点击的链接                                         | 0/1/true/false | false  |\n  | showTimestampInDescription | 在正文处显示广播的时间戳                                       | 0/1/true/false | false  |\n  | showComments               | 在正文处显示评论                                               | 0/1/true/false | false  |\n  | widthOfPics                | 广播配图宽（生效取决于阅读器）                                 | 不指定 / 数字  | 不指定 |\n  | heightOfPics               | 广播配图高（生效取决于阅读器）                                 | 不指定 / 数字  | 不指定 |\n  | sizeOfAuthorAvatar         | 作者头像大小                                                   | 数字           | 48     |\n\n  指定更多与默认值不同的参数选项可以改善 RSS 的可读性，如\n\n  [https://rsshub.app/douban/people/113894409/status/readable=1&authorNameBold=1&showAuthorInTitle=1&showAuthorInDesc=1&showAuthorAvatarInDesc=1&showEmojiForRetweet=1&showRetweetTextInTitle=1&addLinkForPics=1&showTimestampInDescription=1&showComments=1&widthOfPics=100](https://rsshub.app/douban/people/113894409/status/readable=1&authorNameBold=1&showAuthorInTitle=1&showAuthorInDesc=1&showAuthorAvatarInDesc=1&showEmojiForRetweet=1&showRetweetTextInTitle=1&addLinkForPics=1&showTimestampInDescription=1&showComments=1&widthOfPics=100)\n\n  的效果为\n\n  <img loading=\"lazy\" src=\"/img/readable-douban.png\" alt=\"豆瓣读书的可读豆瓣广播 RSS\" />",
         "location": "people/status.ts"
       },
       "/people/:userid/wish/:routeParams?": {
@@ -22068,6 +22236,35 @@
   },
   "dxy": {
     "routes": {
+      "/bbs/board/:boardId": {
+        "path": "/bbs/board/:boardId",
+        "categories": [
+          "bbs"
+        ],
+        "example": "/dxy/bbs/board/46",
+        "parameters": {
+          "specialId": "板块 ID，可在对应板块页 URL 中找到"
+        },
+        "name": "板块",
+        "maintainers": [
+          "TonyRL"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.dxy.cn/bbs/newweb/pc/category/:boardIdId"
+            ],
+            "target": "/bbs/board/:boardIdId"
+          },
+          {
+            "source": [
+              "3g.dxy.cn/bbs/board/:boardIdId"
+            ],
+            "target": "/bbs/board/:boardIdId"
+          }
+        ],
+        "location": "board.ts"
+      },
       "/bbs/special/:specialId": {
         "path": "/bbs/special/:specialId",
         "categories": [
@@ -26832,8 +27029,10 @@
       "/user/:id": {
         "path": "/user/:id",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/gettr/user/jasonmillerindc",
         "parameters": {
           "id": "User id"
@@ -27107,7 +27306,7 @@
           "programming",
           "popular"
         ],
-        "view": 0,
+        "view": 5,
         "parameters": {
           "user": "GitHub username"
         },
@@ -27715,7 +27914,7 @@
           "popular"
         ],
         "example": "/github/trending/daily/javascript/en",
-        "view": 0,
+        "view": 5,
         "parameters": {
           "since": {
             "description": "time range",
@@ -44216,8 +44415,10 @@
       "/jobs/:job_types/:exp_levels/:keywords?/:routeParams?": {
         "path": "/jobs/:job_types/:exp_levels/:keywords?/:routeParams?",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 5,
         "example": "/linkedin/jobs/C-P/1/software engineer",
         "parameters": {
           "job_types": "See the following table for details, use '-' as delimiter",
@@ -49548,8 +49749,8 @@
         ],
         "location": "featured-notes.ts"
       },
-      "/users/notes/:username": {
-        "path": "/users/notes/:username",
+      "/users/notes/:username/:routeParams?": {
+        "path": "/users/notes/:username/:routeParams?",
         "categories": [
           "social-media",
           "popular"
@@ -49557,7 +49758,8 @@
         "view": 1,
         "example": "/misskey/users/notes/support@misskey.io",
         "parameters": {
-          "username": "misskey username format, like support@misskey.io"
+          "username": "Misskey username in the format of username@instance.domain",
+          "routeParams": "\n| Key         | Description                        | Accepted Values | Default |\n| ----------- | ---------------------------------- | --------------- | ------- |\n| withRenotes | Include renotes in the timeline    | 0/1/true/false  | false   |\n| mediaOnly   | Only return posts containing media | 0/1/true/false  | false   |\n\nNote: `withRenotes` and `mediaOnly` are mutually exclusive and cannot both be set to true.\n\nExamples:\n- /misskey/users/notes/mttb2ccp@misskey.io/withRenotes=true\n- /misskey/users/notes/mttb2ccp@misskey.io/mediaOnly=true"
         },
         "features": {
           "requireConfig": false,
@@ -49569,7 +49771,8 @@
         },
         "name": "User timeline",
         "maintainers": [
-          "siygle"
+          "siygle",
+          "SnowAgar25"
         ],
         "location": "user-timeline.ts"
       }
@@ -54156,7 +54359,7 @@
         "maintainers": [
           "nczitzk"
         ],
-        "description": "| العربية | Catalan | Deutsch | Español | زبان فارسی |\n  | ------- | ------- | ------- | ------- | ---------- |\n  | ar      | ca      | de      | es      | fa         |\n\n  | Français | Galego | Italiano | 日本語 | 한국어 |\n  | -------- | ------ | -------- | ------ | ------ |\n  | fr       | gl     | it       | ja     | ko     |\n\n  | Português do Brasil | limba română | Русский | Türkçe | Українська |\n  | ------------------- | ------------ | ------- | ------ | ---------- |\n  | pt-br               | ro           | ru      | tr     | uk         |\n\n  | 简体中文 | 繁體中文 |\n  | -------- | -------- |\n  | zh-cn    | zh-tw    |",
+        "description": "Official RSS Source: https://nodejs.org/en/feed/blog.xml\n    | العربية | Catalan | Deutsch | Español | زبان فارسی |\n  | ------- | ------- | ------- | ------- | ---------- |\n  | ar      | ca      | de      | es      | fa         |\n\n  | Français | Galego | Italiano | 日本語 | 한국어 |\n  | -------- | ------ | -------- | ------ | ------ |\n  | fr       | gl     | it       | ja     | ko     |\n\n  | Português do Brasil | limba română | Русский | Türkçe | Українська |\n  | ------------------- | ------------ | ------- | ------ | ---------- |\n  | pt-br               | ro           | ru      | tr     | uk         |\n\n  | 简体中文 | 繁體中文 |\n  | -------- | -------- |\n  | zh-cn    | zh-tw    |",
         "location": "blog.ts"
       }
     },
@@ -59251,8 +59454,10 @@
       "/top/:category?/:lang?": {
         "path": "/top/:category?/:lang?",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/plurk/top/topReplurks",
         "parameters": {
           "category": "Category, see the table below, `topReplurks` by default",
@@ -59276,8 +59481,10 @@
       "/topic/:topic": {
         "path": "/topic/:topic",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/plurk/topic/standwithukraine",
         "parameters": {
           "topic": "Topic ID, can be found in URL"
@@ -59306,8 +59513,10 @@
       "/user/:user": {
         "path": "/user/:user",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/plurk/user/plurkoffice",
         "parameters": {
           "user": "User ID, can be found in URL"
@@ -62507,7 +62716,8 @@
         "example": "/rss3/vitalik.eth",
         "name": "Account Activities",
         "maintainers": [
-          "DIYgod"
+          "DIYgod",
+          "pseudoyu"
         ],
         "url": "docs.rss3.io/api-reference#tag/decentralized/GET/decentralized/%7Baccount%7D",
         "description": "Retrieve the activities associated with a specified account in the decentralized system.",
@@ -66751,12 +66961,15 @@
           "supportScihub": false
         },
         "name": "子版块",
-        "maintainers": [],
+        "maintainers": [
+          "TonyRL"
+        ],
         "location": "forum.ts"
       }
     },
     "name": "第一会所",
-    "url": "sis001.com"
+    "url": "sis001.com",
+    "description": ":::tip\n    第一会所有多个备用网址，本路由默认使用`https://sis001.com`，若该网址无法访问，可以在部署实例的时候通过`SIS001_BASE_URL`环境变量配置要使用的地址，如`https://www.sis001.com`等\n    :::"
   },
   "sjtu": {
     "routes": {
@@ -68234,6 +68447,43 @@
     },
     "name": "Sony",
     "url": "sony.com"
+  },
+  "sorrycc": {
+    "routes": {
+      "/": {
+        "name": "文章",
+        "categories": [
+          "blog"
+        ],
+        "path": "/",
+        "example": "/sorrycc",
+        "radar": [
+          {
+            "source": [
+              "sorrycc.com"
+            ]
+          }
+        ],
+        "maintainers": [
+          "KarasuShin"
+        ],
+        "view": 0,
+        "features": {
+          "supportRadar": true,
+          "requireConfig": [
+            {
+              "name": "SORRYCC_COOKIES",
+              "description": "登录用户的Cookie,获取方式：\n1. 登录sorrycc.com\n2. 打开浏览器开发者工具，切换到 Application 面板\n3. 点击侧边栏中的Storage -> Cookies -> https://sorrycc.com\n4. 复制 Cookie 中的 wordpress_logged_in_f05fca638390aed897fbe3c2fff03000 值",
+              "optional": true
+            }
+          ]
+        },
+        "description": "云谦的博客，部分内容存在权限校验，访问完整内容请部署RSSHub私有实例并配置授权信息",
+        "location": "index.ts"
+      }
+    },
+    "name": "云谦的博客",
+    "url": "sorrycc.com"
   },
   "soundofhope": {
     "routes": {
@@ -70933,6 +71183,36 @@
     },
     "name": "西南石油大学",
     "url": "swpu.edu.cn"
+  },
+  "sycl": {
+    "routes": {
+      "/:feed?": {
+        "path": "/:feed?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/sycltech/news",
+        "parameters": {
+          "feed": "Feed source, defaults to news, references https://feeds.sycl.tech/"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Feeds",
+        "maintainers": [
+          "mocusez"
+        ],
+        "description": "|  Events  | News |    Research Paper     |  Videos  |\n| :----: | :--: | :-------------: | :----: |\n| events | news | research_papers | videos |",
+        "location": "feeds.ts"
+      }
+    },
+    "name": "SYCL",
+    "url": "sycl.tech"
   },
   "syosetu": {
     "routes": {
@@ -85800,6 +86080,39 @@
         ],
         "description": "| 板块 | 参数 |\n| ------- | ------- |\n| 新闻动态 | 1838 |\n| 课程思政 | 1842 |\n| 校内动态 | 2613 |\n| 学习思考 | 2614 |\n| 成果展示 | 2615 |\n| 媒体聚焦 | 2616 |\n| 制度文件 | 2617 |\n| 教学运行 | 1849 |\n| 实践竞赛 | 1850 |\n| 留学生Notice | 1851 |\n| 项目申报 | 1852 |\n| 学籍管理 | 1853 |\n| 办事指南 | 1839 |",
         "location": "jwc/index.ts"
+      },
+      "/www/:type": {
+        "path": "/www/:type",
+        "categories": [
+          "university"
+        ],
+        "example": "/zjut/www/4528",
+        "parameters": {
+          "type": "分类，见下表"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "浙江工业大学首页",
+        "maintainers": [
+          "zhullyb"
+        ],
+        "url": "www.zjut.edu.cn",
+        "radar": [
+          {
+            "source": [
+              "www.zjut.edu.cn/:type/list.htm"
+            ],
+            "target": "/www/:type"
+          }
+        ],
+        "description": "| 板块 | 参数 |\n| ------- | ------- |\n| 学术动态 | xsdt_4662 |\n| 三创·人物 | 4527 |\n| 通知公告 | 4528 |\n| 美誉工大 | 5389 |\n| 智库工大 | 5390 |\n| 校区班车 | xqbc |",
+        "location": "www/index.ts"
       }
     },
     "name": "浙江工业大学",
